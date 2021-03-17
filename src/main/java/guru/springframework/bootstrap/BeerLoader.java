@@ -18,31 +18,33 @@ public class BeerLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
         loadBeer();
-
     }
 
-    public void loadBeer(){
+    public void loadBeer() throws InterruptedException {
         if (repository.count() == 0){
-            repository.save(Beer.builder()
+            Beer beer1 = Beer.builder()
                     .beerName("Mango Bobs")
                     .beerStyle("IPA")
                     .upc(1230000001L)
                     .price(new BigDecimal("12.95"))
                     .quantityToBrew(200)
                     .minOnHand(12)
-                    .build());
+                    .build();
+            repository.save(beer1);
 
-            repository.save(Beer.builder()
+            Beer beer2 = Beer.builder()
                     .beerName("Galaxy Cat")
                     .beerStyle("PALE_ALE")
                     .upc(1230000002L)
                     .price(new BigDecimal("11.95"))
                     .quantityToBrew(200)
                     .minOnHand(12)
-                    .build());
+                    .build();
+
+            repository.save(beer2);
         }
+
         System.out.println("Loaded Beers: " + repository.count());
     }
 }
