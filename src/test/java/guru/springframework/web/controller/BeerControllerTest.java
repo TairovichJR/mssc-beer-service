@@ -46,6 +46,7 @@ class BeerControllerTest {
                 .andExpect(status().isCreated());
     }
 
+
     @Test
     void updateBeerById() throws Exception {
         BeerDto beerDto = getValidBeerDto();
@@ -65,6 +66,7 @@ class BeerControllerTest {
                 .upc(243455L)
                 .quantityOnHand(12)
                 .build();
+
     }
 
 }
