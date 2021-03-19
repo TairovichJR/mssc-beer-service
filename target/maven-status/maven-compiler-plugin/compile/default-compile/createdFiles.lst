@@ -1,0 +1,14 @@
+guru/springframework/web/controller/BeerController.class
+guru/springframework/domain/Beer$BeerBuilder.class
+guru/springframework/MsscBeerServiceApplication.class
+guru/springframework/bootstrap/BeerLoader.class
+guru/springframework/web/mappers/DateMapper.class
+guru/springframework/web/controller/MvcExceptionHandler.class
+guru/springframework/domain/Beer.class
+guru/springframework/web/mappers/BeerMapperImpl.class
+guru/springframework/web/model/BeerDto$BeerDtoBuilder.class
+guru/springframework/web/model/BeerPagedList.class
+guru/springframework/web/mappers/BeerMapper.class
+guru/springframework/repositories/BeerRepository.class
+guru/springframework/web/model/BeerDto.class
+guru/springframework/web/model/BeerStyleEnum.class
