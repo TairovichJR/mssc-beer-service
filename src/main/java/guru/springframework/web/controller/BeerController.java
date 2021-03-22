@@ -3,6 +3,7 @@ package guru.springframework.web.controller;
 import guru.springframework.services.BeerService;
 import guru.springframework.web.model.BeerDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,11 +16,12 @@ import java.util.UUID;
 @RequestMapping("/api/v1/beer")
 public class BeerController {
 
+    @Autowired
     private final BeerService beerService;
 
     @GetMapping("/{beerId}")
     public ResponseEntity<BeerDto> getBeerById(@PathVariable("beerId") UUID beerId){
-        return  new ResponseEntity<>(beerService.getById(beerId), HttpStatus.OK);
+        return new ResponseEntity<>(beerService.getById(beerId), HttpStatus.OK);
     }
 
     @PostMapping
@@ -30,7 +32,7 @@ public class BeerController {
     @PutMapping("/{beerId}")
     public ResponseEntity updateBeerById(@PathVariable("beerId") UUID beerId,
                                          @Valid @RequestBody BeerDto beerDto){
-        return  new ResponseEntity<>(beerService.updateBeer(beerId, beerDto), HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(beerService.updateBeer(beerId, beerDto), HttpStatus.NO_CONTENT);
     }
 
 
