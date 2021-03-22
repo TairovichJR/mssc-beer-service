@@ -1,6 +1,7 @@
 package guru.springframework.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import guru.springframework.bootstrap.BeerLoader;
 import guru.springframework.services.BeerService;
 import guru.springframework.web.model.BeerDto;
 import guru.springframework.web.model.BeerStyleEnum;
@@ -31,10 +32,6 @@ class BeerControllerTest {
 
     @MockBean
     BeerService beerService;
-
-    @BeforeEach
-    void setUp() {
-    }
 
     @Test
     void getBeerById() throws Exception {
@@ -79,7 +76,7 @@ class BeerControllerTest {
                 .beerName("My Beer")
                 .beerStyle(BeerStyleEnum.ALE)
                 .price(new BigDecimal("2.99"))
-                .upc(243455L)
+                .upc(BeerLoader.BEER_1_UPC)
                 .quantityOnHand(12)
                 .build();
 

@@ -16,7 +16,6 @@ import java.util.UUID;
 @RequestMapping("/api/v1/beer")
 public class BeerController {
 
-    @Autowired
     private final BeerService beerService;
 
     @GetMapping("/{beerId}")
