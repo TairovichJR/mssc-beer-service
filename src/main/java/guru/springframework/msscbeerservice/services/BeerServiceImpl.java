@@ -17,7 +17,6 @@ import org.springframework.util.StringUtils;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-
 @RequiredArgsConstructor
 @Service
 public class BeerServiceImpl implements BeerService {
@@ -108,6 +107,4 @@ public class BeerServiceImpl implements BeerService {
 
         return beerMapper.beerToBeerDto(beerRepository.save(beer));
     }
-
-
 }
